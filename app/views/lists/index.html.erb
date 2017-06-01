@@ -1,0 +1,16 @@
+<h1>Task List</h1>
+
+<ul>
+  
+<% @lists.each do |list| %>
+
+    <li>
+        <%= link_to list.id, list %>
+        <%= list.content %>
+    </li>
+  
+<% end %>
+
+</ul>
+
+<%= link_to '新規タスクの追加', new_list_path %>
