@@ -1,10 +1,13 @@
 class ListsController < ApplicationController
+  
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  
+  
   def index
     @lists = List.all
   end
 
   def show
-    @list = List.find(params[:id])
   end
 
   def new
@@ -24,14 +27,19 @@ class ListsController < ApplicationController
   end
 
   def edit
-    @list = List.find(params[:id])
   end
 
   def update
+    if @list.update(list_params)
+      flash[:success] = 'list は正常に更新されました'
+      redirect_to @message
+    else
+      flash.now[:danger] = 'list は更新されませんでした'
+      render :edit
+    end
   end
 
   def destroy
-    @list = List.find(params[:id])
     @list.destroy
 
     flash[:success] = 'list は正常に削除されました'
@@ -39,6 +47,10 @@ class ListsController < ApplicationController
   end
   
   private
+  
+  def set_list
+    set_list
+  end
 
   # Strong Parameter
   def list_params
