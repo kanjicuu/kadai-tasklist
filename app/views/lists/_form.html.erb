@@ -1,12 +1,12 @@
 <%= form_for(list) do |f| %>
 
-<% if message.errors.any? %>
+<% if list.errors.any? %>
     <div id="error_explanation">
       <ul>
         
-        <% message.errors.full_messages.each do |message| %>
+        <% list.errors.full_lists.each do |list| %>
           <li>
-             <%= message %>
+             <%= list %>
           </li>
         <% end %>
 

@@ -1,4 +1,4 @@
 class List < ApplicationRecord
-  validates :content, presence: true, lenght: {maximum: 255}
-  validates :status, presence: true, lenght: {maximum: 10}
+  validates :content, presence: true, length: {maximum: 255}
+  validates :status, presence: true, length: {maximum: 10}
 end

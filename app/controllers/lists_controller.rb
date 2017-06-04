@@ -30,7 +30,7 @@ class ListsController < ApplicationController
   def update
     if @list.update(list_params)
       flash[:success] = 'list は正常に更新されました'
-      redirect_to @message
+      redirect_to @list
     else
       flash.now[:danger] = 'list は更新されませんでした'
       render :edit
@@ -47,11 +47,11 @@ class ListsController < ApplicationController
   private
   
   def set_list
-    set_list
+    @list = List.find(params[:id])
   end
 
   # Strong Parameter
   def list_params
-    params.require(:list).permit(:status, :title)
+    params.require(:list).permit(:content, :status)
   end
 end
