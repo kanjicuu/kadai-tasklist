@@ -1,27 +1,35 @@
-<%= form_for(list) do |f| %>
+<div class="row">
+  <div class="col-xs-6">
 
-<% if list.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        
-        <% list.errors.full_lists.each do |list| %>
-          <li>
-             <%= list %>
-          </li>
-        <% end %>
-
-      </ul>
+    <%= form_for(list) do |f| %>
+    
+    <% if list.errors.any? %>
+        <div class="alert alert-warning">
+          <ul>
+            
+            <% list.errors.full_lists.each do |list| %>
+              <li>
+                 <%= list %>
+              </li>
+            <% end %>
+    
+          </ul>
+        </div>
+    <% end %>
+    
+    <div class="form-control">
+      
+    <%= f.label :status, 'タイトル' %>
+    <%= f.text_field :status ,class:'form-control'%>  
+      
+    <%= f.label :content, 'メッセージ' %>
+    <%= f.text_field :content, class:'form-control' %>
+    
+    </div>  
+      
+    <%= f.submit '投稿' ,class: 'btn btn-primary'%>
+    
+    <% end %>
+    
     </div>
-<% end %>
-  
-<%= f.label :status, 'タイトル' %>
-<%= f.text_field :status %>  
-  
-<%= f.label :content, 'メッセージ' %>
-<%= f.text_field :content %>
-
-
-  
-<%= f.submit '投稿' %>
-
-<% end %>
+</div>

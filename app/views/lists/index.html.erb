@@ -1,17 +1,41 @@
 <h1>Task List</h1>
 
-<ul>
-  
+<% if @lists.any? %>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>タイトル</th>
+        <th>メッセージ</th>
+      </tr>
+    </thead>
+    <tbody>
+      
 <% @lists.each do |list| %>
 
-    <li>
-        <%= link_to list.id, list %>
-        <%= list.status %>
-        <%= list.content %>
-    </li>
-  
+        <tr>
+          <td>
+<%= link_to list.id, list %>
+</td>
+          <td>
+<%= list.status %>
+</td>
+          <td>
+<%= list.content %>
+</td>
+        </tr>
+      
 <% end %>
 
-</ul>
+    </tbody>
+  </table>
+  <div>
+    
+<%= paginate @lists %>
 
-<%= link_to '新規タスクの追加', new_list_path %>
+  </div>
+<% end %>
+
+
+<%= link_to '新規メッセージの投稿', new_list_path, class: "btn btn-primary" %>

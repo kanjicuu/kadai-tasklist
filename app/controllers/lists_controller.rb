@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   
   def index
-    @lists = List.all
+    @lists = List.order(created_at: :desc).page(params[:page]).per(25)
   end
 
   def show
