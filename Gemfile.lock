@@ -55,6 +55,7 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    honoka-rails (3.3.7)
     i18n (0.8.4)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
@@ -93,6 +94,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
+    pg (0.20.0)
     puma (3.9.1)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -168,11 +170,13 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  honoka-rails
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
+  pg
   puma (~> 3.0)
   rails (~> 5.0.3)
   sass-rails (~> 5.0)
