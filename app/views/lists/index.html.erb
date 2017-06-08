@@ -1,7 +1,6 @@
 <h1>Task List</h1>
 
 <% if @lists.any? %>
-
   <table class="table table-striped">
     <thead>
       <tr>
@@ -11,31 +10,18 @@
       </tr>
     </thead>
     <tbody>
-      
-<% @lists.each do |list| %>
-
+      <% @lists.each do |list| %>
         <tr>
-          <td>
-<%= link_to list.id, list %>
-</td>
-          <td>
-<%= list.status %>
-</td>
-          <td>
-<%= list.content %>
-</td>
+          <td><%= link_to list.id, list %></td>
+          <td><%= list.title %></td>
+          <td><%= list.content %></td>
         </tr>
-      
-<% end %>
-
+      <% end %>
     </tbody>
   </table>
   <div>
-    
-<%= paginate @lists %>
-
+    <%= paginate @lists %>
   </div>
 <% end %>
-
 
 <%= link_to '新規メッセージの投稿', new_list_path, class: "btn btn-primary" %>

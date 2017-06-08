@@ -1,11 +1,3 @@
 <% flash.each do |list_type, list| %>
-
-
-
-<div class="alert alert-
-  <%= list_type %>
-  ">
-  <%= list %>
-</div>
-
+  <div class="alert alert-<%= list_type %>"><%= list %></div>
 <% end %>
