@@ -13,7 +13,7 @@
       <% @lists.each do |list| %>
         <tr>
           <td><%= link_to list.id, list %></td>
-          <td><%= list.title %></td>
+          <td><%= list.status %></td>
           <td><%= list.content %></td>
         </tr>
       <% end %>
